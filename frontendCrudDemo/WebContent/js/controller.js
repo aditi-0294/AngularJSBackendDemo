@@ -22,7 +22,6 @@ app.controller('PersonController' , function($scope,PersonService) {
 		PersonService.getAllPersons().then(function(response) {
 		
 	//	PersonService.getAllPersons.then(function(response) { - it is a statement : error - service is not defined 
-			
 		
 			$scope.persons = response.data ; // success codes - list of array details which retrieved from POSTMAN
 			console.log("Controller success status : " + response.status) 
