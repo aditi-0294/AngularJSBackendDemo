@@ -17,11 +17,13 @@ import com.niit.model.Person;
 @Transactional
 public class PersonDaoImpl implements PersonDao {
 
-	// @Override
 	
 	@Autowired
 	private SessionFactory sessionFactory ;
 	
+	
+	// @Override
+	// get the person details :
 	public List<Person> getAllPersons() {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession() ;
@@ -31,5 +33,20 @@ public class PersonDaoImpl implements PersonDao {
 	
 		// return null;
 	}
+
+
+	//@Override
+	// get person details by id :
+	public Person getPersonById(int id) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession() ;
+		Person person = (Person)session.get(Person.class, id) ; // returns java object from database as an object of object class and hence should be typecasted - retrieves only one java object ( record ) from database  .
+		return person ;
+		
+		//return null;
+	}
+	
+	
+	
 
 }
