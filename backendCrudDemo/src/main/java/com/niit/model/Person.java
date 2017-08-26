@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "Person_Batch_1")
+@Entity // annotates POJO class as an entity
+@Table(name = "Person_Batch_1") // declares table name
 public class Person {
 	
 	@Id
