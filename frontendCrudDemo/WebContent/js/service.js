@@ -6,15 +6,25 @@
 
 console.log("service.js started loading")
 
-app.factory('PersonService' , function($http) {
+app.factory('PersonService' , function($http , $location) {
 	
 	var personService = {} ; // service will get instantiated
 	
+	// to get all person details :
 	personService.getAllPersons = function() {
 		
 		console.log("Entered Service.js method - personService.getAllPersons method")
 		
 		return $http.get("http://localhost:9090/backendCrudDemo/person/getAllPersons") ; // same as request method in backend controller
+		
+	}
+	
+	// to get person details by id on clicking link :
+	personService.getPersonById = function(id) {
+		
+		console.log("Entered Service.js method - personService.getPersonById method")
+		
+		return $http.get("http://localhost:9090/backendCrudDemo/person/getPersonById/" + id) ; // same as request method in backend controller
 		
 	}
 	
