@@ -4,4 +4,4 @@
 
 console.log("app.js started loading")
 
-var app = angular.module("app" , [])  // declares a new module
+var app = angular.module("app" , ['ngRoute'])  // declares a new module
