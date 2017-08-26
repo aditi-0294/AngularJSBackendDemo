@@ -6,6 +6,7 @@ import javax.ws.rs.GET;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,13 +18,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import com.niit.dao.PersonDao;
 import com.niit.model.Person;
 
-@Controller
+@Controller // declares class is a controller class containing all request mappings 
 public class PersonController {
 
-	@Autowired
+	@Autowired // tells container to inject a dependency
 	private PersonDao personDao ; // loose-coupling
 	
 	
+	/*
 	// get all person details :
 	@RequestMapping(value = "/person/getAllPersons" , method = RequestMethod.GET)
 	public @ResponseBody List<Person> getAllPersons() { 
@@ -34,8 +36,10 @@ public class PersonController {
 		
 		return persons ;
 	}
+	*/
 	
 	
+	/*
 	// get person details by id :
 	@RequestMapping(value = "/person/getPersonById/{id}" , method = RequestMethod.GET)
 	public @ResponseBody Person getPersonById(@PathVariable int id) {
@@ -44,8 +48,10 @@ public class PersonController {
 		return person ;
 		
 	}
+	*/
 	
 	
+	/*
 	// Insert and save person details :
 	@RequestMapping(value = "/person/insertSavePersonDetails" , method = RequestMethod.POST)
 	//@ResponseStatus(value = HttpStatus.NO_CONTENT) // PostMan Status = 204 (NoContent) 
@@ -54,6 +60,48 @@ public class PersonController {
 	public void insertPersonDetails(@RequestBody Person person) {
 		
 		personDao.insertPersonDetails(person);
+	
+	}
+	*/
+	
+	
+	
+	/*	ResponseEntity - represents entire Http Response - controls status code , headers and body	*/
+	
+	// get all person details :
+	@RequestMapping(value = "/person/getAllPersons" , method = RequestMethod.GET)
+	public ResponseEntity<List<Person>> getAllPersons() { 
+			
+		List<Person> persons = personDao.getAllPersons() ;
+			
+		return new ResponseEntity<List<Person>>(persons,HttpStatus.OK) ;
+		
+	}
+		
+		
+	// get person details by id :
+	@RequestMapping(value = "/person/getPersonById/{id}" , method = RequestMethod.GET)
+	public ResponseEntity<Person> getPersonById(@PathVariable int id) {
+			
+		Person person = personDao.getPersonById(id) ;
+		
+		if(person == null) {
+			
+			return new ResponseEntity<Person>(HttpStatus.NO_CONTENT) ;
+			
+		}
+		
+		return new ResponseEntity<Person>(person,HttpStatus.OK) ;
+			
 	}
 	
+		
+	// Insert and save person details :
+	@RequestMapping(value = "/person/insertSavePersonDetails" , method = RequestMethod.POST)
+	public ResponseEntity<Void> insertPersonDetails(@RequestBody Person person) {
+			
+		personDao.insertPersonDetails(person);
+		return new ResponseEntity<Void>(HttpStatus.CREATED) ;
+	
+	}
 }
