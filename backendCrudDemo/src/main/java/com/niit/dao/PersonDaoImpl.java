@@ -45,6 +45,15 @@ public class PersonDaoImpl implements PersonDao {
 		
 		//return null;
 	}
+
+
+	//@Override
+	// Insert and save person details :
+	public void insertPersonDetails(Person person) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession() ;
+		session.save(person) ; // saves transient entity
+	}
 	
 	
 	

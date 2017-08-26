@@ -10,5 +10,7 @@ public interface PersonDao {
 	List<Person> getAllPersons() ;
 	
 	Person getPersonById(int id) ;
+	
+	void insertPersonDetails(Person person) ;
 
 }
