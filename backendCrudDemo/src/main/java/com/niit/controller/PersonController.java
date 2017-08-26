@@ -48,8 +48,9 @@ public class PersonController {
 	
 	// Insert and save person details :
 	@RequestMapping(value = "/person/insertSavePersonDetails" , method = RequestMethod.POST)
-	//@ResponseStatus(value = HttpStatus.NO_CONTENT) // PostMan Status = 204 (NoContent)
-	@ResponseStatus(value = HttpStatus.OK)
+	//@ResponseStatus(value = HttpStatus.NO_CONTENT) // PostMan Status = 204 (NoContent) 
+	//@ResponseStatus(value = HttpStatus.OK) // Postman Status = 200 (OK) - default status
+	@ResponseStatus(value = HttpStatus.CREATED) // Postman Status = 201 (Created)
 	public void insertPersonDetails(@RequestBody Person person) {
 		
 		personDao.insertPersonDetails(person);
