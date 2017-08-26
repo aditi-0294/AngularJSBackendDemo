@@ -13,12 +13,12 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.model.Person;
 
-@Repository
-@Transactional
+@Repository // marks specific class as DAO
+@Transactional // starts database transaction
 public class PersonDaoImpl implements PersonDao {
 
 	
-	@Autowired
+	@Autowired // tells container to inject a dependency
 	private SessionFactory sessionFactory ;
 	
 	
