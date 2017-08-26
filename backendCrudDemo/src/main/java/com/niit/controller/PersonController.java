@@ -19,6 +19,8 @@ import com.niit.dao.PersonDao;
 import com.niit.model.Person;
 
 @Controller // declares class is a controller class containing all request mappings 
+//@RestController //  considers @ResponseBody active by default to all request mapping methods
+//@RestController = @Controller + @ResponseBody
 public class PersonController {
 
 	@Autowired // tells container to inject a dependency
