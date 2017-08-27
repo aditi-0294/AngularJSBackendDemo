@@ -14,6 +14,17 @@ myApp.config(function($routeProvider) {
 		templateUrl : 'views/home.html'
 	})
 	
+	.when('/aboutUs' , {
+		templateUrl : 'views/aboutUs.html'
+	})
 	
+	.when('/getAllPersons' , {
+		controller : 'PersonController' ,
+		templateUrl : 'views/getAllPersons.html'
+	})
+	
+	.otherwise({
+		templateUrl : 'views/home.html'
+	})
 	
 })
