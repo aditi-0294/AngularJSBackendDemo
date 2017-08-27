@@ -117,4 +117,14 @@ public class PersonController {
 		return new ResponseEntity<Void>(HttpStatus.OK) ;
 	
 	}
+	
+	
+	// Edit / Update person details :
+	@RequestMapping(value = "/person/editPerson" , method = RequestMethod.PUT)
+	public ResponseEntity<Void> updatePerson(@RequestBody Person person) {
+		
+		personDao.updatePerson(person);
+		return new ResponseEntity<Void>(HttpStatus.OK) ;
+		
+	}
 }
