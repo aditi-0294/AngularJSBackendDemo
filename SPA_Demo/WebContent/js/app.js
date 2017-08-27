@@ -28,6 +28,11 @@ myApp.config(function($routeProvider) {
 		controller : 'PersonController'
 	})
 	
+	.when('/getPersonById/:id' , {
+		templateUrl : 'views/individualPersonDetails.html' ,
+		//controller : 'PersonController'
+		controller : 'PersonViewController'
+	})
 	.otherwise({
 		templateUrl : 'views/home.html'
 	})
