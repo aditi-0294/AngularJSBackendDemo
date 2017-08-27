@@ -33,6 +33,12 @@ myApp.config(function($routeProvider) {
 		//controller : 'PersonController'
 		controller : 'PersonViewController'
 	})
+	
+	.when('/editPersonById/:id' , {
+		templateUrl : 'views/editPersonForm.html' ,
+		controller : 'PersonViewController'
+	})
+	
 	.otherwise({
 		templateUrl : 'views/home.html'
 	})
