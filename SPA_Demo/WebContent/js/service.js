@@ -21,7 +21,7 @@ myApp.factory('PersonService' , function($http) {
 	
 	
 	// to insert person details
-	personService.insertPersonDetails = function(person) {
+	personService.insertPersonDetails = function(person) { // data ( as an object ) passes in the form of parameter
 		
 		console.log("Entered Service.js method - personService.insertPersonDetails method")
 		
@@ -29,6 +29,17 @@ myApp.factory('PersonService' , function($http) {
 		
 		
 	}
+	
+	
+	// to get person details by id on clicking link :
+	personService.getPersonById = function(id) {
+		
+		console.log("Entered Service.js method - personService.getPersonById method")
+		
+		return $http.get("http://localhost:9090/backendCrudDemo/person/getPersonById/" + id) ; // same as request method in backend controller
+		
+	}
+	
 	
 	return personService ; // instance will be returned - return $http.get("http://localhost:9090/backendCrudDemo/getAllPersons") ;
 	
