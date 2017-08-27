@@ -63,6 +63,16 @@ public class PersonDaoImpl implements PersonDao {
 		Session session = sessionFactory.getCurrentSession() ;
 		session.delete(person) ;
 	}
+
+
+	//@Override
+	// Edit person details :
+	public void updatePerson(Person person) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession() ;
+		session.update(person);
+		
+	}
 	
 	
 	

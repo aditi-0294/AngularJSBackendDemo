@@ -14,5 +14,7 @@ public interface PersonDao {
 	void insertPersonDetails(Person person) ;
 	
 	void deletePersonById(Person person) ;
+	
+	void updatePerson(Person person) ;
 
 }
