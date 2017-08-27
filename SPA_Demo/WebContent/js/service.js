@@ -41,6 +41,17 @@ myApp.factory('PersonService' , function($http) {
 	}
 	
 	
+	// to delete person details by id :
+	personService.deletePersonById = function(id) {
+		
+		console.log("Entered Service.js method - personService.deletePersonById method")
+		
+		return $http['delete']("http://localhost:9090/backendCrudDemo/person/deletePersonById/" + id) ; // same as request method in backend controller
+		
+		
+	}
+	
+	
 	return personService ; // instance will be returned - return $http.get("http://localhost:9090/backendCrudDemo/getAllPersons") ;
 	
 	
