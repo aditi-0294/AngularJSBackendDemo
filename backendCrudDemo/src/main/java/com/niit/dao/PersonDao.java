@@ -12,5 +12,7 @@ public interface PersonDao {
 	Person getPersonById(int id) ;
 	
 	void insertPersonDetails(Person person) ;
+	
+	void deletePersonById(Person person) ;
 
 }
