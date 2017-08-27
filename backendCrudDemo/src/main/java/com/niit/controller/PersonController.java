@@ -106,4 +106,15 @@ public class PersonController {
 		return new ResponseEntity<Void>(HttpStatus.CREATED) ;
 	
 	}
+	
+	
+	// Delete person details :
+	@RequestMapping(value = "/person/deletePersonById/{id}" , method = RequestMethod.GET)
+	public ResponseEntity<Void> deletePersonById(@PathVariable int id) {
+		
+		Person person = personDao.getPersonById(id) ;
+		personDao.deletePersonById(person);
+		return new ResponseEntity<Void>(HttpStatus.OK) ;
+	
+	}
 }
