@@ -59,6 +59,26 @@ myApp.controller('PersonController' , function($scope,PersonService,$location) {
 	}
 	
 	
+	// to delete person details :
+	$scope.deletePerson = function(id) {
+		
+		PersonService.deletePersonById(id).then(function(response) {
+			
+			console.log("Controller.js deletePersonById() success status : " + response.status)
+			console.log("Controller.js deletePersonById() success data : " + response.data)
+			
+			getAllPersons()
+			$location.path('/getAllPersons')
+		
+		} , function(response) {
+			
+			console.log("Controller.js deletePersonById() failure / error status : " + response.status)
+			console.log("Controller.js deletePersonById() failure / error data : " + response.data)
+		
+		})
+	}
+	
+	
 	getAllPersons() ;
 	
 }) ;	
