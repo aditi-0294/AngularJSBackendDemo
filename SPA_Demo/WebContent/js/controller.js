@@ -58,6 +58,7 @@ myApp.controller('PersonController' , function($scope,PersonService,$location) {
 		})
 	}
 	
+	
 	getAllPersons() ;
 	
 }) ;	
