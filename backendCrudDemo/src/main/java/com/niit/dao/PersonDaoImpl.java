@@ -54,6 +54,15 @@ public class PersonDaoImpl implements PersonDao {
 		Session session = sessionFactory.getCurrentSession() ;
 		session.save(person) ; // saves transient entity
 	}
+
+
+	//@Override
+	// Delete person details : 
+	public void deletePersonById(Person person) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession() ;
+		session.delete(person) ;
+	}
 	
 	
 	
