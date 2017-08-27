@@ -14,7 +14,7 @@
 
 <tr>
 
- 	<th>ID</th>		
+ 	<th>ID</th> 		
 
 	<th>First Name</th>
 	
@@ -32,15 +32,15 @@
 
 	<tr ng-repeat = "person in persons"> <!-- person - variable ; persons : Backend - PersonController.java invoked from PersonDaoImpl.java  -->
 
-		<td>{{person.id}}</td>
+	 	<td>{{person.id}}</td>	
 
-		 <td>{{person.first_name}}</td>
+	<!--  <td>{{person.first_name}}</td>	-->
 	
-	<!-- 	
+	 	
 		<td>
-			<a href = "" ng-click = "getPersonById(person.id)">{{person.first_name}}</a>
+			<a href = "#!/getPersonById/{{person.id}}" ng-click = "getPersonById(person.id)">{{person.first_name}}</a>
 		</td>
-	-->
+	
 	
 		<td>{{person.last_name}}</td>
 		
@@ -63,20 +63,3 @@
 
 {{persons}}
 
-</body>
-
-<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-
-
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<script type = "text/javascript" src = "js/app.js"></script>
-<script type = "text/javascript" src = "js/service.js"></script>
-<script type = "text/javascript" src = "js/controller.js"></script>
-
-
-</html>
