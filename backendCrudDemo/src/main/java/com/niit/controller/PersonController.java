@@ -109,7 +109,7 @@ public class PersonController {
 	
 	
 	// Delete person details :
-	@RequestMapping(value = "/person/deletePersonById/{id}" , method = RequestMethod.GET)
+	@RequestMapping(value = "/person/deletePersonById/{id}" , method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletePersonById(@PathVariable int id) {
 		
 		Person person = personDao.getPersonById(id) ;
