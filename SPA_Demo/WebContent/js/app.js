@@ -23,6 +23,11 @@ myApp.config(function($routeProvider) {
 		templateUrl : 'views/getAllPersons.html'
 	})
 	
+	.when('/savePersonDetails' , {
+		templateUrl : 'views/personForm.html' ,
+		controller : 'PersonController'
+	})
+	
 	.otherwise({
 		templateUrl : 'views/home.html'
 	})
