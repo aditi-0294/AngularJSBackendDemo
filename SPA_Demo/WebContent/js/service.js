@@ -48,8 +48,19 @@ myApp.factory('PersonService' , function($http) {
 		
 		return $http['delete']("http://localhost:9090/backendCrudDemo/person/deletePersonById/" + id) ; // same as request method in backend controller
 		
+	}
+	
+	
+	// to edit person details by id :
+	personService.updatePerson = function(person) {
+		
+		console.log("Entered Service.js method - personService.updatePerson method")
+		
+		return $http.put("http://localhost:9090/backendCrudDemo/person/editPerson" , person) ; // same as request method in backend controller
 		
 	}
+	
+	
 	
 	
 	return personService ; // instance will be returned - return $http.get("http://localhost:9090/backendCrudDemo/getAllPersons") ;
